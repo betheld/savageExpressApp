@@ -2,11 +2,10 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-var db, collection;
+//const db, collection;
 
-require('dotenv').config()
-const url = process.env.DB_URL
-const dbName = "demo";
+const url = "mongodb+srv://betheld:Mm0HmCe1Snc1syZp@cluster0.ikrip.mongodb.net/Cluster0?retryWrites=true&w=majority"
+const dbName = "Cluster0";
 
 app.listen(3000, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
